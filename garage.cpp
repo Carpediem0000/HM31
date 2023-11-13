@@ -54,3 +54,22 @@ void Garage::sortBy(int num) {
             return left->getYear() > right->getYear();});
     }
 }
+
+void Garage::search(QListWidget* qlw, Vehicle* obj){
+    obj->displayInfo(qlw);
+}
+
+bool compareStringsIgnoreCase(const Vehicle* obj, const QString& str2) {
+    QString model = obj->getModel();
+    int length1 = model.length();
+    int length2 = str2.length();
+    int minLength = std::min(length1, length2);
+
+    for (int i = 0; i < minLength; ++i) {
+        if (model[i].toLower() != str2[i].toLower()) {
+            return false;
+        }
+    }
+
+    return true;
+}

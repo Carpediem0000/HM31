@@ -37,6 +37,8 @@ private slots:
 
     void on_editVehicleBtn_clicked();
 
+    void on_lineEdit_textEdited(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     AddBicycleWindow *addBicycleWindow;

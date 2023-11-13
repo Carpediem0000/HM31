@@ -119,3 +119,18 @@ void MainWindow::on_editVehicleBtn_clicked()
     }
 }
 
+
+void MainWindow::on_lineEdit_textEdited(const QString &arg1)
+{
+    if (arg1.isEmpty()) {
+        arr->displayVehicles((ui->listWidget));
+        return;
+    }
+    ui->listWidget->clear();
+    for (int i = 0; i < arr->size(); i++) {
+        if (compareStringsIgnoreCase(arr->returnObj(i), arg1)) {
+            arr->search((ui->listWidget), arr->returnObj(i));
+        }
+    }
+}
+

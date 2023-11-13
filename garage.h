@@ -24,6 +24,9 @@ public:
     void removeVehicle(int index);
     void displayVehicles(QListWidget* qlw);
     void sortBy(int num);
+    void search(QListWidget* qlw, Vehicle* obj);
 };
+
+bool compareStringsIgnoreCase(const Vehicle* obj, const QString& str2);
 
 #endif // GARAGE_H
